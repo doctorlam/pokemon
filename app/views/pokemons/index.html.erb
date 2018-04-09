@@ -13,6 +13,7 @@
   <tbody>
     <% @pokemons.each do |pokemon| %>
       <tr>
+        <td> <%= image_tag pokemon.image.thumb.url if pokemon.image? %></td>
         <td><%= pokemon.name %></td>
         <td><%= link_to 'Show', pokemon %></td>
         <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>

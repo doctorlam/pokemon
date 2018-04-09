@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+ <%= image_tag @pokemon.image.url if @pokemon.image? %>
+<br>
   <strong>Name:</strong>
   <%= @pokemon.name %>
 </p>
