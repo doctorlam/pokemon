@@ -10,13 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409204504) do
+ActiveRecord::Schema.define(version: 20180409213654) do
+
+  create_table "abilities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pokemon_abilities", force: :cascade do |t|
+    t.integer "pokemon_id"
+    t.integer "ability_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pokemon_species", force: :cascade do |t|
+    t.integer "pokemon_id"
+    t.integer "specie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "specy_id"
+  end
+
+  create_table "pokemon_types", force: :cascade do |t|
+    t.integer "pokemon_id"
+    t.integer "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.integer "feet"
+    t.integer "inches"
+    t.decimal "weight"
+    t.string "specy"
+  end
+
+  create_table "species", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

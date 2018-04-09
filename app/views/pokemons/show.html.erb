@@ -1,10 +1,21 @@
 <p id="notice"><%= notice %></p>
 
  <%= image_tag @pokemon.image.url if @pokemon.image? %>
-<br>
-  <strong>Name:</strong>
-  <%= @pokemon.name %>
-</p>
+ <h1><%= @pokemon.name %></h1>
+<ul>
+	<li>Height: <%= @pokemon.feet %> <%= @pokemon.inches %></li>
+	<li>Weight: <%= @pokemon.weight %></li>
+	<li>Species: <%= @pokemon.specy %></li>
+<li>Types: 
+<% for @type in @pokemon.types %>
+	<%= @type.name %> |
+<% end %></li>
+<li>Abilities: 
+<% for @ability in @pokemon.abilities %>
+	<%= @ability.name %> | 
+<% end %></li>
+</ul>
+
 
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
 <%= link_to 'Back', pokemons_path %>

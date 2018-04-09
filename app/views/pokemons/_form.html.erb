@@ -25,6 +25,40 @@
     <%= form.label :name %>
     <%= form.text_field :name, id: :pokemon_name %>
   </div>
+  <div class="field">
+    <%= form.label :feet %>
+    <%= form.text_field :feet %>
+  </div>
+    <div class="field">
+    <%= form.label :inches %>
+    <%= form.text_field :inches %>
+  </div>
+    <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+  <h2>Species</h2>
+    <%= form.select(:specy, [ "Fire", "Grass", "Weed"], id: "specy", :include_blank => 'Select an option') %>
+  <h2>Type</h2> 
+
+   <%= hidden_field_tag "pokemon[type_ids][]", nil %>
+        <% Type.order('name ASC').each do |type| %>
+          <%= check_box_tag "pokemon[type_ids][]", type.id, @pokemon.type_ids.include?(type.id), id: dom_id(type) %>
+          <%= label_tag dom_id(type), type.name %> 
+          <br />
+
+        <% end %>
+
+        <h2>Abilities</h2> 
+
+   <%= hidden_field_tag "pokemon[ability_ids][]", nil %>
+        <% Ability.order('name ASC').each do |ability| %>
+          <%= check_box_tag "pokemon[ability_ids][]", ability.id, @pokemon.ability_ids.include?(ability.id), id: dom_id(ability) %>
+          <%= label_tag dom_id(ability), ability.name %> 
+          <br />
+
+        <% end %>
+
 
   <div class="actions">
     <%= form.submit %>
