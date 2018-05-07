@@ -41,7 +41,7 @@
           <%= link_to 'Fairy', '/pokemons?by_types[]=18&commit=Submit', class: 'fairy' %>
         </div><!--/types-filter-->
         <div class="search">
-          <h3><%= link_to "Wishlist", wishlists_path %></h3>
+          <h3 class="wishlist"><%= link_to "Wishlist", wishlists_path %></h3>
           <br>
           <%= form_tag(pokemons_path, method: :get) do %>
           <%= text_field_tag :term, params[:term] %>
