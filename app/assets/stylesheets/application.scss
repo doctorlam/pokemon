@@ -19,7 +19,15 @@
 a:hover {
 	background: transparent;
 }
-
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex input {
+	margin-left: 10px;
+	margin-right: 10px;
+}
 html {
 	font-size: 16px;
 }
@@ -95,6 +103,8 @@ h1 {
 }
 h2 {
 	font-size: 2.5rem;
+	border-bottom: 1px solid gray;
+	margin-top: 20px;
 }
  .flex-container {
  	display: flex;
@@ -149,6 +159,9 @@ h2 {
 	margin:5px;
 	color: white !important;
 
+}
+.links {
+	margin-top: 20px;
 }
 .normal {
 	background: #9D9C71;

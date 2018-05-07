@@ -1,4 +1,4 @@
-<%= form_with(model: pokemon, local: true) do |form| %>
+<%= form_with(model: pokemon, local: true) do |f| %>
   <% if pokemon.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(pokemon.errors.count, "error") %> prohibited this pokemon from being saved:</h2>
@@ -12,33 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :image %><br>
-    <%= form.file_field :image %>
-    <% if form.object.image? %>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <% if f.object.image? %>
       <%= image_tag form.object.image.thumb.url %>
-      <%= form.label :remove_image %>
-      <%= form.check_box :remove_image %> 
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %> 
     <% end %>
   </div>
     <div class="field">
 
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :pokemon_name, class: 'form-control' %>
+    <h2><%= f.label :name %></h2>
+    <%= f.text_field :name, id: :pokemon_name, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= form.label :feet %>
-    <%= form.text_field :feet, class: 'form-control' %>
+      <h2>Height & Weight</h2>
+  <div class="flex">
+    <%= f.label :feet %>
+    <%= f.text_field :feet, class: 'form-control' %>
+    <%= f.label :inches %>
+    <%= f.text_field :inches, class: 'form-control' %>
+    <%= f.label :weight %>
+    <%= f.text_field :weight, class: 'form-control' %>
   </div>
-    <div class="field">
-    <%= form.label :inches %>
-    <%= form.text_field :inches, class: 'form-control' %>
-  </div>
-    <div class="field">
-    <%= form.label :weight %>
-    <%= form.text_field :weight, class: 'form-control' %>
-  </div>
+  
   <h2>Species</h2>
-    <%= form.text_field :specy, class: 'form-control' %>
+    <%= f.text_field :specy, class: 'form-control' %>
   <h2>Type</h2> 
 
    <%= hidden_field_tag "pokemon[type_ids][]", nil %>
@@ -50,15 +48,16 @@
         <% end %>
 
         <h2>Abilities</h2> 
-          <%= form.fields_for :capabilities do |capabilities| %>
-            <%= render 'capability_fields', form: capabilities %>
+          <%= f.fields_for :capabilities do |capabilities| %>
+            <%= render 'capability_fields', f: capabilities %>
           <% end %>
 
             <div class="links">
-              <%= link_to_add_association "Add Ability", form, :capabilities %>
+              <%= link_to_add_association "Add Ability", f, :capabilities %>
             </div>
+            <br>
 
   <div class="actions">
-    <%= form.submit "Create Pokemon", class: 'btn btn-primary' %>
+    <%= f.submit "Create Pokemon", class: 'btn btn-primary' %>
   </div>
 <% end %>
