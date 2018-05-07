@@ -20,6 +20,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'has_scope'
 gem "cocoon"
+gem 'devise'
 
 group :production do
   gem 'pg'

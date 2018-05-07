@@ -14,7 +14,20 @@
  *= require_self
  */
 @import "bootstrap";
+nav {
+	position:absolute;
+	right: 20px;
+	top:20px;
+}
+nav ul {
+	list-style-type: none;
+	
+}
+nav li {
+	display: inline;
+	margin-left: 20px;
 
+}
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 a:hover {
 	background: transparent;
@@ -38,6 +51,7 @@ body {
 }
 .container {
 	background: whitesmoke;
+	position: relative;
 }
 .btn-primary {
 	background: #D4854E;

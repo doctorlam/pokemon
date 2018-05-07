@@ -12,9 +12,10 @@
       <h2><%= pokemon.name %></h2>
       <h3><% for type in pokemon.types %>
         <%= type.name %> | <% end %></h3>
-
+      <% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
         <td><%= link_to 'Delete', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
     </div><!--/pokemon-box-->
     <% end %>
 </div><!--/flex-container-->
