@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :wishlists
   resources :species
   resources :types
   resources :abilities

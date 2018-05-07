@@ -120,6 +120,11 @@ h2 {
 	border-bottom: 1px solid gray;
 	margin-top: 20px;
 }
+h3 {
+	font-size: 2.5rem;
+	border: 1px solid gray;
+	padding: 10px;
+}
  .flex-container {
  	display: flex;
  	max-width: 1400px;
@@ -153,6 +158,12 @@ h2 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+.form-container-column {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
  .form {
  	width: 400px;
