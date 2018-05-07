@@ -16,6 +16,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.3'
 gem 'fog-aws'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
 
 group :production do
   gem 'pg'

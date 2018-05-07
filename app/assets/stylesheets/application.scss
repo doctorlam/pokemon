@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+ .flex-container {
+ 	display: flex;
+ 	max-width: 1200px;
+ 	flex-wrap: wrap;
+ }
+ .pokemon-box {
+ 	width: 300px;
+ 	min-height: 500px;
+ 	display: flex;
+ 	flex-direction: column; 
+ 	margin: 0 20px 0 20px;
+ }
+ .pokemon-box img {
+ 	width: 300px;
+ 	height: 400px;
+ 	object-fit: cover;
+ 	 }
+.form-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+ .form {
+ 	width: 400px;
+ 	display:flex;
+ 	flex-direction: column;
+ }

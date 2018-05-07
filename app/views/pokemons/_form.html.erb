@@ -23,19 +23,19 @@
     <div class="field">
 
     <%= form.label :name %>
-    <%= form.text_field :name, id: :pokemon_name %>
+    <%= form.text_field :name, id: :pokemon_name, class: 'form-control' %>
   </div>
   <div class="field">
     <%= form.label :feet %>
-    <%= form.text_field :feet %>
+    <%= form.text_field :feet, class: 'form-control' %>
   </div>
     <div class="field">
     <%= form.label :inches %>
-    <%= form.text_field :inches %>
+    <%= form.text_field :inches, class: 'form-control' %>
   </div>
     <div class="field">
     <%= form.label :weight %>
-    <%= form.text_field :weight %>
+    <%= form.text_field :weight, class: 'form-control' %>
   </div>
   <h2>Species</h2>
     <%= form.select(:specy, [ "Fire", "Grass", "Weed"], id: "specy", :include_blank => 'Select an option') %>
@@ -61,6 +61,6 @@
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Pokemon", class: 'btn btn-primary' %>
   </div>
 <% end %>
