@@ -16,4 +16,8 @@ class Pokemon < ApplicationRecord
 	scope :by_species, -> specy { where(:specy => specy) }
 
 
+	private
+	  def image_size_validation
+	    errors[:image] << "should be less than 3MB" if image.size > 3.0.megabytes
+	  end
 end
