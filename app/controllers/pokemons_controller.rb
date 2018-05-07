@@ -6,11 +6,11 @@ class PokemonsController < ApplicationController
   # GET /pokemons.json
   def index
     @pokemons = if params[:term]
-      Pokemon.where('name LIKE ?', "%#{params[:term]}%")    
+      Pokemon.where('name ILIKE ?', "%#{params[:term]}%")    
       
     else
       @pokemons = apply_scopes(Pokemon.order(:created_at => 'DESC'))
-     
+
     end
      
   end
