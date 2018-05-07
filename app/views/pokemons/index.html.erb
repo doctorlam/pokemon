@@ -1,15 +1,18 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>My Pokemon Cards</h1>
 
+<%= link_to 'Add New Pokemon Card', new_pokemon_path, class:'btn btn-primary' %>
 <div class="flex-container">
     <% @pokemons.each do |pokemon| %>
   <div class="pokemon-box">
-     <%= image_tag pokemon.image.thumb.url if pokemon.image? %>
+    <%= link_to pokemon do %>
+     <%= image_tag pokemon.image.url if pokemon.image? %>
+    <% end %>
       <h2><%= pokemon.name %></h2>
+      <h3><% for type in pokemon.types %>
+        <%= type.name %> | <% end %></h3>
 
-        <td><%= link_to 'Show', pokemon %></td>
         <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
         <td><%= link_to 'Delete', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </div><!--/pokemon-box-->
@@ -18,5 +21,4 @@
 
 <br>
 
-<%= link_to 'New Pokemon', new_pokemon_path, class:'btn btn-primary' %>
 </div>

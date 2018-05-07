@@ -14,10 +14,104 @@
  *= require_self
  */
 @import "bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+a:hover {
+	background: transparent;
+}
+
+html {
+	font-size: 16px;
+}
+body {
+	background: black;
+}
+.container {
+	background: whitesmoke;
+}
+.btn-primary {
+	background: #D4854E;
+	border: #D4854E;
+}
+.logo-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.circle {
+	width: 100px;
+	height: 100px;
+	background: #EBC445;
+	color: white;
+	font-family: 'Amatic SC';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	font-size: 4rem;
+	margin-top: 20px;
+}
+.logo {
+	text-align: center;
+	font-family: 'Amatic SC';
+	font-size: 4rem;
+	font-weight: bold;
+	display: flex;
+	align-items:center;
+	width: 100%;
+	text-decoration: none;
+}
+.logo:hover {
+	background:transparent;
+}
+.show {
+	display: flex;
+	flex-direction: column; 
+	align-items: center;
+	justify-content: center;
+}
+.show ul {
+	list-style: none;
+	font-family: 'helvetica' !important;
+}
+.narrow {
+	width: 10%;
+	font-weight: bold;
+}
+.table-responsive {
+	width: 500px;
+	margin: 0 auto;
+}
+p, li, td {
+	font-family: helvetica, sans-serif;
+	font-size: 1.25rem;
+}
+h1, h2, h3 {
+	font-family: 'Amatic SC', sans-serif;
+}
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2.5rem;
+}
  .flex-container {
  	display: flex;
- 	max-width: 1200px;
+ 	max-width: 1400px;
  	flex-wrap: wrap;
+ }
+ .filter-box {
+ 	width: 100%;
+ 	background: #f1c40f;
+ 	padding: 10px;
+ 	color: white;
+ 	text-align: center;
+ 	margin-bottom: 20px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: center;
+ 	align-items:center;
  }
  .pokemon-box {
  	width: 300px;
@@ -25,11 +119,12 @@
  	display: flex;
  	flex-direction: column; 
  	margin: 0 20px 0 20px;
+ 	text-align: center;
  }
  .pokemon-box img {
- 	width: 300px;
+ 	width: 100%;
  	height: 400px;
- 	object-fit: cover;
+ 	object-fit: contain;
  	 }
 .form-container {
 	display: flex;
@@ -41,3 +136,124 @@
  	display:flex;
  	flex-direction: column;
  }
+
+.types-filter {
+	width: 500px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+.types-filter a {
+	margin:5px;
+	color: white !important;
+
+}
+.normal {
+	background: #9D9C71;
+	color: white;
+	width: 100px;
+}
+.fire {
+	background: #E08140;
+	color: white;
+		width: 100px;
+
+}
+.water {
+	background: #4875E4;
+	color: white;
+		width: 100px;
+
+}
+.electric {
+	background: #4875E4;
+	color: white;
+		width: 100px;
+
+}
+.grass {
+	background: #72A949;
+	color: white;
+		width: 100px;
+
+}
+.ice {
+	background: #95CFD0;
+	color: white;
+		width: 100px;
+
+}
+.fighting {
+	background: #AD3A2F;
+	color: white;
+		width: 100px;
+
+}
+.poison {
+	background: #8F4595;
+	color: white;
+		width: 100px;
+
+}
+.ground {
+	background: #D0AC50;
+	color: white;
+		width: 100px;
+
+}
+.flying {
+	background: #D0AC50;
+	color: white;
+		width: 100px;
+
+}
+.psychic {
+	background: #E65F83;
+	color: white;
+		width: 100px;
+
+}
+.bug {
+	background: #A0A93D;
+	color: white;
+		width: 100px;
+
+}
+.rock {
+	background: #998840;
+	color: white;
+		width: 100px;
+
+}
+.ghost {
+	background: #554776;
+	color: white;
+		width: 100px;
+
+}
+.dragon {
+	background: #4B2DE8;
+	color: white;
+		width: 100px;
+
+}
+.dark {
+	background: #504137;
+	color: white;
+		width: 100px;
+
+}
+.steel {
+	background: #9FA1BD;
+	color: white;
+		width: 100px;
+
+}
+.fairy {
+	background: #D78EDF;
+	color: white;
+		width: 100px;
+
+}

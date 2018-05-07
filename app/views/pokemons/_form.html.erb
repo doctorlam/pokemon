@@ -38,7 +38,7 @@
     <%= form.text_field :weight, class: 'form-control' %>
   </div>
   <h2>Species</h2>
-    <%= form.select(:specy, [ "Fire", "Grass", "Weed"], id: "specy", :include_blank => 'Select an option') %>
+    <%= form.text_field :specy, class: 'form-control' %>
   <h2>Type</h2> 
 
    <%= hidden_field_tag "pokemon[type_ids][]", nil %>
@@ -50,15 +50,13 @@
         <% end %>
 
         <h2>Abilities</h2> 
+          <%= form.fields_for :capabilities do |capabilities| %>
+            <%= render 'capabilities_fields', form: capabilities %>
+          <% end %>
 
-   <%= hidden_field_tag "pokemon[ability_ids][]", nil %>
-        <% Ability.order('name ASC').each do |ability| %>
-          <%= check_box_tag "pokemon[ability_ids][]", ability.id, @pokemon.ability_ids.include?(ability.id), id: dom_id(ability) %>
-          <%= label_tag dom_id(ability), ability.name %> 
-          <br />
-
-        <% end %>
-
+            <div class="links">
+              <%= link_to_add_association "Add Ability", form, :capabilities %>
+            </div>
 
   <div class="actions">
     <%= form.submit "Create Pokemon", class: 'btn btn-primary' %>

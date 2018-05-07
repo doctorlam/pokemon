@@ -1,10 +1,15 @@
 class PokemonsController < ApplicationController
   before_action :set_pokemon, only: [:show, :edit, :update, :destroy]
-
+  has_scope :by_types, type: :array
+  has_scope :by_species, type: :array
   # GET /pokemons
   # GET /pokemons.json
   def index
-    @pokemons = Pokemon.all
+    @pokemons = if params[:term]
+      Pokemon.where('name LIKE ?', "%#{params[:term]}%")
+    else    
+      @pokemons = apply_scopes(Pokemon.order(:created_at => 'DESC'))
+    end
   end
 
   # GET /pokemons/1
@@ -69,6 +74,6 @@ class PokemonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokemon_params
-      params.require(:pokemon).permit(:name, :image, :remove_image, :feet, :inches, :weight, {ability_ids: []}, {type_ids: []}, :specy)
+      params.require(:pokemon).permit(:name, :image, :remove_image, :feet, :inches, :weight, {ability_ids: []}, {type_ids: []}, :specy, capabilities_attributes: [:id, :description, :_destroy])
     end
 end

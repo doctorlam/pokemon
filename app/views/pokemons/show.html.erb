@@ -1,21 +1,35 @@
+<div class="container show">
 <p id="notice"><%= notice %></p>
+ <h1><%= @pokemon.name %></h1>
 
  <%= image_tag @pokemon.image.url if @pokemon.image? %>
- <h1><%= @pokemon.name %></h1>
-<ul>
-	<li>Height: <%= @pokemon.feet %> <%= @pokemon.inches %></li>
-	<li>Weight: <%= @pokemon.weight %></li>
-	<li>Species: <%= @pokemon.specy %></li>
-<li>Types: 
-<% for @type in @pokemon.types %>
-	<%= @type.name %> |
-<% end %></li>
-<li>Abilities: 
-<% for @ability in @pokemon.abilities %>
-	<%= @ability.name %> | 
-<% end %></li>
-</ul>
 
+ <div class="table table-responsive">
+ 	<table class="table table-striped">
+ 	<tr>
+		<td class="narrow">Height:</td> 
+		<td><%= @pokemon.feet %>' <%= @pokemon.inches %>"</td>
+	</tr>
+	<tr>
+		<td class="narrow">Weight:</td> 
+		<td><%= @pokemon.weight %> pounds</td>
+	</tr>
+	<tr>
+		<td class="narrow">Species:</td>
+		 <td><%= @pokemon.specy %></td>
+	<tr>
+		<td class="narrow">Types:</td>
+		<td><% for @type in @pokemon.types %>
+			<%= @type.name %> | 
+		<% end %></td>
+	</tr>
+	<tr>
+		<td class="narrow">Abilities:</td>
+		
+			<td><% for @capability in @pokemon.capabilities %><%= @capability.description %> | <% end %></td>
+	
+</div>
 
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
 <%= link_to 'Back', pokemons_path %>
+</div>

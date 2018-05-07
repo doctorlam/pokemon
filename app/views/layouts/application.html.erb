@@ -9,6 +9,37 @@
   </head>
 
   <body>
+    <div class="container">
+
+  <header>
+  	<div class="logo-container">
+  		<div class="circle">JYL</div>
+  	<h1><%= link_to "James' Pokemon Card Collection", root_path, class:'logo' %></h1>
+  	</div>
+ 		<div class="filter-box">
+        <div class="types-filter">
+          <%= link_to 'Normal', '/pokemons?by_types[]=1&commit=Submit', class: 'normal' %>
+          <%= link_to 'Fire', '/pokemons?by_types[]=2&commit=Submit', class: 'fire' %>
+          <%= link_to 'Water', '/pokemons?by_types[]=3&commit=Submit', class: 'water' %>
+           <%= link_to 'Electric', '/pokemons?by_types[]=4&commit=Submit', class: 'electric' %>
+          <%= link_to 'Grass', '/pokemons?by_types[]=5&commit=Submit', class: 'grass' %>
+          <%= link_to 'Ice', '/pokemons?by_types[]=6&commit=Submit', class: 'ice' %>
+           <%= link_to 'Fighting', '/pokemons?by_types[]=7&commit=Submit', class: 'fighting' %>
+          <%= link_to 'Poison', '/pokemons?by_types[]=8&commit=Submit', class: 'poison' %>
+          <%= link_to 'Ground', '/pokemons?by_types[]=9&commit=Submit', class: 'ground' %>
+           <%= link_to 'Flying', '/pokemons?by_types[]=10&commit=Submit', class: 'flying' %>
+          <%= link_to 'Psychic', '/pokemons?by_types[]=11&commit=Submit', class: 'psychic' %>
+          <%= link_to 'Bug', '/pokemons?by_types[]=12&commit=Submit', class: 'bug' %>
+           <%= link_to 'Rock', '/pokemons?by_types[]=13&commit=Submit', class: 'rock' %>
+          <%= link_to 'Ghost', '/pokemons?by_types[]=14&commit=Submit', class: 'ghost' %>
+          <%= link_to 'Dragon', '/pokemons?by_types[]=15&commit=Submit', class: 'dragon' %>
+             <%= link_to 'Dark', '/pokemons?by_types[]=16&commit=Submit', class: 'dark' %>
+          <%= link_to 'Steel', '/pokemons?by_types[]=17&commit=Submit', class: 'steel' %>
+          <%= link_to 'Fairy', '/pokemons?by_types[]=18&commit=Submit', class: 'fairy' %>
+        </div><!--/types-filter-->
+      </div>
+  </header>
     <%= yield %>
+  </div>
   </body>
 </html>
