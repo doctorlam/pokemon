@@ -18,6 +18,8 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 a:hover {
 	background: transparent;
+	text-decoration: none; 
+	color: inherit;
 }
 .flex {
 	display: flex;
@@ -59,6 +61,18 @@ body {
 	border-radius: 50%;
 	font-size: 4rem;
 	margin-top: 20px;
+}
+.dark-circle {
+		width: 130px;
+	height: 130px;
+	background: gray;
+	color: white;
+	font-family: 'Amatic SC';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	font-size: 1.7rem;
 }
 .logo {
 	text-align: center;
@@ -114,12 +128,11 @@ h2 {
  .filter-box {
  	width: 100%;
  	background: #f1c40f;
- 	padding: 10px;
+ 	padding: 30px;
  	color: white;
  	text-align: center;
  	margin-bottom: 20px;
  	display: flex;
- 	flex-direction: column;
  	justify-content: center;
  	align-items:center;
  }
@@ -269,4 +282,15 @@ h2 {
 	color: white;
 		width: 100px;
 
+}
+
+@media only screen and (max-width: 670px) {
+
+	.filter-box {
+		flex-direction: column;
+	}
+	.pokemon-box {
+		width: 100%;
+		margin-top: 20px;
+	}
 }

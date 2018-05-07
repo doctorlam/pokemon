@@ -13,10 +13,13 @@
 
   <header>
   	<div class="logo-container">
-  		<div class="circle">JYL</div>
+  		<%= link_to root_path do %>
+        <div class="circle">JYL</div>
+      <% end %>
   	<h1><%= link_to "James' Pokemon Card Collection", root_path, class:'logo' %></h1>
   	</div>
  		<div class="filter-box">
+      <%= link_to root_path do %><div class="dark-circle">All Pokemon!</div><% end %>
         <div class="types-filter">
           <%= link_to 'Normal', '/pokemons?by_types[]=1&commit=Submit', class: 'normal' %>
           <%= link_to 'Fire', '/pokemons?by_types[]=2&commit=Submit', class: 'fire' %>
@@ -37,6 +40,12 @@
           <%= link_to 'Steel', '/pokemons?by_types[]=17&commit=Submit', class: 'steel' %>
           <%= link_to 'Fairy', '/pokemons?by_types[]=18&commit=Submit', class: 'fairy' %>
         </div><!--/types-filter-->
+        <div class="search">
+          <%= form_tag(pokemons_path, method: :get) do %>
+          <%= text_field_tag :term, params[:term] %>
+          <%= submit_tag 'Search', name: nil, class: 'btn btn-primary' %>
+          <% end %>
+        </div><!--/search-->
       </div>
   </header>
     <%= yield %>
