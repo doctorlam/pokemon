@@ -143,6 +143,8 @@ h3.wishlist {
  	display: flex;
  	max-width: 1400px;
  	flex-wrap: wrap;
+ 	align-items: center;
+	justify-content: center;
  }
  .filter-box {
  	width: 100%;
