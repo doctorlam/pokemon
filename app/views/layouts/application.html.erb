@@ -63,9 +63,13 @@
         </div><!--/search-->
       </div>
   </header>
+  # of Cards: <span id="running-total"></span>
   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield %>
   </div>
+  <script>
+            document.getElementById("running-total").innerHTML =$('.pokemon-box').length
+</script>
   </body>
 </html>
