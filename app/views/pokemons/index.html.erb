@@ -1,7 +1,6 @@
 <div class="container">
 <p id="notice"><%= notice %></p>
-
-
+ # of Cards: <span id="running-total"></span>
 <%= link_to 'Add New Pokemon Card', new_pokemon_path, class:'btn btn-primary' %> <br><br>
 <div class="flex-container">
     <% @pokemons.each do |pokemon| %>
