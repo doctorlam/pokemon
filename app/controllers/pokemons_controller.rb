@@ -24,6 +24,8 @@ class PokemonsController < ApplicationController
   # GET /pokemons/new
   def new
     @pokemon = Pokemon.new
+    @pokemon.capabilities.build 
+
   end
 
   # GET /pokemons/1/edit
